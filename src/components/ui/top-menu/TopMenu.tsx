@@ -31,7 +31,7 @@ export const TopMenu = () => {
                 </Link>
             </div>
             {/* menu */}
-            <div className=" flex flex-1 justify-center items-center">
+            <div className="flex flex-1 justify-center items-center">
                 {
                     menuOptions.map(({ id, path, name }) => (
                         <div className="hidden sm:block rounded-md hover:cursor-pointer mr-4" key={id}>
@@ -43,13 +43,13 @@ export const TopMenu = () => {
             {/* cart search menu */}
             <div className="flex flex-1 items-center justify-end gap-2 sm:gap-4">
                 <Link href="/search">
-                    <IoSearchOutline className="hidden sm:block hover:cursor-pointer hover:bg-gray-100 rounded-md h-5 w-5" />
+                    <IoSearchOutline className="hover:cursor-pointer hover:bg-gray-100 rounded-md h-5 w-5" />
                 </Link>
 
                 <Link href="/cart">
                     <div className="relative">
                         <span className="absolute -top-2 -right-2 rounded-full bg-blue-500 text-white px-1 text-xs font-bold">3</span>
-                        <IoCartOutline className="hidden sm:block hover:cursor-pointer hover:bg-gray-100 rounded-md h-5 w-5" />
+                        <IoCartOutline className="hover:cursor-pointer hover:bg-gray-100 rounded-md h-5 w-5" />
                     </div>
                 </Link>
 

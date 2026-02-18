@@ -1,1 +1,1 @@
-export * from './ui/top-menu/TopMenu'
+export { TopMenu } from './ui/top-menu/TopMenu';

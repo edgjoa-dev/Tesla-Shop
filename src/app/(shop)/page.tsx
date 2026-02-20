@@ -1,10 +1,20 @@
-import { Title } from "@/components";
+import { GridProducts, Title } from "@/components";
+import { initialData } from "@/seed/seed";
 
 export default function ShopPage() {
+
+    const products = initialData.products;
+
     return (
-        <section className="w-full h-svh">
-            <Title title="Shop" subtitle="Los Mejores Productos para todos." className="px-5 mb-10" />
-            <h1>Shop Page</h1>
+        <section>
+            <Title
+                title="Shop"
+                subtitle="Los Mejores Productos para todos."
+                className="mb-10 px-5"
+            />
+            <GridProducts
+                products={products}
+            />
         </section>
     );
 }

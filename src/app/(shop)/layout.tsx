@@ -6,7 +6,7 @@ export default function ShopLayout({
     children: React.ReactNode;
 }) {
     return (
-        <section className="h-svh w-full">
+        <section className="w-full">
             <TopMenu />
             { children }
         </section>

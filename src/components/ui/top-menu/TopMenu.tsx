@@ -22,7 +22,7 @@ const menuOptions = [
 
 export const TopMenu = () => {
     return (
-        <nav className="flex justify-between items-center w-full p-4 mb-4 shadow-2xl shadow-slate-300/50 bg-white rounded-md">
+        <nav className="flex justify-between items-center w-full p-4 mb-4 shadow-lg shadow-slate-300/50 bg-white rounded-md">
             {/* logo */}
             <div className="flex flex-1 items-center justify-start gap-2">
                 <Link href="/">

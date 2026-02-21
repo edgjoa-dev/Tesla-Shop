@@ -1,6 +1,8 @@
 'use client'
 
 import Link from "next/link"
+import { useUIStore } from "@/store"
+
 import {
     IoCloseOutline,
     IoLogInOutline,
@@ -11,8 +13,13 @@ import {
     IoShirtOutline,
     IoTicketOutline
 } from "react-icons/io5"
+import clsx from "clsx"
 
 export const SideBar = () => {
+
+    const isSideMenuOpen = useUIStore(state => state.isSideMenuOpen);
+    const closeSideMenu = useUIStore(state => state.closeSideMenu);
+
     return (
         <aside
             role="dialog"
@@ -21,18 +28,30 @@ export const SideBar = () => {
             className="relative z-50"
         >
             {/* Overlay */}
-            <div
-                className="fixed inset-0 bg-black/60 backdrop-blur-md"
-                aria-hidden="true"
-            />
+            {
+                isSideMenuOpen && (
+                    <div
+                        className="fixed inset-0 bg-black/60 backdrop-blur-md"
+                        aria-hidden="true"
+                        onClick={closeSideMenu}
+                    />
+
+                )
+            }
 
             {/* Sidebar Panel */}
-            <div className="fixed top-0 right-0 h-svh w-[500] max-w-full bg-white p-6 shadow-2xl transition-transform duration-300">
+            <div className={
+                clsx(
+                    "fixed top-0 right-0 h-svh w-[500] max-w-full bg-white p-6 shadow-2xl transition-transform duration-300",
+                    isSideMenuOpen ? "translate-x-0" : "translate-x-full"
+                )
+            }>
 
                 {/* Close Button */}
                 <button
                     aria-label="Cerrar menú"
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    onClick={closeSideMenu}
                 >
                     <IoCloseOutline size={32} aria-hidden="true" />
                 </button>

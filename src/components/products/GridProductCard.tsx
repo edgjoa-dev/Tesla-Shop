@@ -18,7 +18,7 @@ export const GridProductCard = ({ product }: Props) => {
 
     return (
         <Link
-            href={`/products/${product.slug}`}
+            href={`/product/${product.slug}`}
             className="group flex flex-col rounded-lg fade-in hover:shadow-2xl shadow-slate-300/50 transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500"
             itemScope
             itemType="https://schema.org/Product"

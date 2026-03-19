@@ -18,8 +18,13 @@ const menuOptions = [
     },
     {
         id: 3,
-        path: "/category/kids",
+        path: "/category/kid",
         name: "Niños"
+    },
+    {
+        id: 4,
+        path: "/category/unisex",
+        name: "Unisex"
     }
 ]
 

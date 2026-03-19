@@ -1,5 +1,10 @@
 import { notFound } from "next/navigation";
 
+import { initialData } from "@/seed/seed";
+import { GridProducts, Title } from "@/components";
+
+const seedProducts =  initialData.products;
+
 interface Props {
     params: Promise<{
         id: string;
@@ -9,13 +14,28 @@ interface Props {
 export default async function CategoryPage({ params }: Props) {
     const { id } = await params;
 
-    if (id !== "men" && id !== "women" && id !== "kids") {
+    const products = seedProducts.filter((product) => product.gender === id);
+
+    const labels: Record<string, string> = {
+        men: "para Hombres",
+        women: "para Mujeres",
+        kid: "para Niños",
+        unisex: "para Todos",
+    };
+
+    if ( !labels[id] ) {
         notFound();
     }
 
     return (
-        <div>
-            <h1>Category Page {id}</h1>
-        </div>
+        <section >
+            <Title
+                title={`Articulos ${labels[id]}`}
+                subtitle="Todos los productos disponibles"
+                className="mb-2"
+            />
+
+            <GridProducts products={products}/>
+        </section>
     );
 }

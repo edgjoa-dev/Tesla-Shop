@@ -1,4 +1,4 @@
-import { QuantitySelctor, SelectedSize } from "@/components";
+import { QuantitySelctor, SelectedSize, SlideShow } from "@/components";
 import { fontTitle } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -23,8 +23,8 @@ export default async function ProductPage({ params }: Props) {
     return (
         <section className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3 h-svh">
             {/* Slideshow */}
-            <div className=" col-span-1 md:col-span-2 bg-gray-900 h-[700]">
-                <span> Image Slideshow </span>
+            <div className=" col-span-1 md:col-span-2 h-[700]">
+                <SlideShow images={product.images} title={product.title} className="h-full bg-teal-500" />
             </div>
 
             {/* Detalles */}

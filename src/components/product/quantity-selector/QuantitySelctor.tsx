@@ -21,7 +21,7 @@ export const QuantitySelctor = () => {
 
     return (
         <section className="my-2">
-            <span className="text-lg font-bold"> Seleccionar Cantidad </span>
+            <span className="text-md font-bold"> Seleccionar Cantidad </span>
             <div className="flex my-2">
                 <button
                     className="bg-gray-900 text-white py-2 px-3 rounded-sm hover:bg-gray-700"
@@ -30,7 +30,7 @@ export const QuantitySelctor = () => {
                     -1
                 </button>
 
-                <span className={`${ fontTitle.className } antialiased flex items-center justify-center w-[50] bg-gray-200 text-xl`} >
+                <span className={`${ fontTitle.className } antialiased flex items-center justify-center w-[50] bg-gray-200 text-lg`} >
                     { counter }
                 </span>
 

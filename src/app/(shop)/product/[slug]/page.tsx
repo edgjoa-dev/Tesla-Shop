@@ -1,3 +1,4 @@
+import { SelectedSize } from "@/components";
 import { fontTitle } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -36,6 +37,7 @@ export default async function ProductPage({ params }: Props) {
                 <p className="font-medium text-sm">{product.description}</p>
 
                 {/* //TODO:Selector numero piezas */}
+                <SelectedSize selectedSize={ product.sizes[0] } availableSizes={product.sizes} />
 
                 <div className="flex flex-col gap-2 w-fit">
                     <button className="btn-primary mt-4 rounded-md"> Agregar al Carito </button>

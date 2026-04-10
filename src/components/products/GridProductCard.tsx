@@ -42,7 +42,7 @@ export const GridProductCard = ({ product }: Props) => {
             </div>
 
             <div className="p-4 flex flex-col">
-                <h3 className="font-medium mt-2 group-hover:text-blue-500">
+                <h3 className="font-medium mt-2 group-hover:text-blue-800">
                     {product.title}
                 </h3>
 

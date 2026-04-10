@@ -1,10 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Image from 'next/image';
 
 import { Swiper as SwiperObject } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Navigation, Thumbs, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -22,7 +22,7 @@ interface Props {
 
 
 
-export const SlideShow = ({ images, title, className }: Props) => {
+export const SlideShow = memo<Props>(({ images, title, className }: Props) => {
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperObject>();
 
 
@@ -31,14 +31,20 @@ export const SlideShow = ({ images, title, className }: Props) => {
             <Swiper
                 style={
                     {
-                        '--swiper-navigation-color': '#fff',
+                        '--swiper-navigation-color': '#2563EB',
                         '--swiper-pagination-color': '#fff',
                     } as React.CSSProperties
                 }
+                loop={true}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                grabCursor={true}
                 spaceBetween={10}
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper }}
-                modules={[FreeMode, Navigation, Thumbs]}
+                modules={[FreeMode, Navigation, Thumbs, Autoplay]}
                 className="mySwiper2"
             >
                 {
@@ -48,9 +54,9 @@ export const SlideShow = ({ images, title, className }: Props) => {
                                 loading='eager'
                                 src={`/products/${image}`}
                                 alt={title}
-                                height={400}
-                                width={900}
-                                className="rounded-lg object-fill"
+                                height={900}
+                                width={930}
+                                className="rounded-2xl"
                             />
                         </SwiperSlide>
                     )
@@ -73,8 +79,8 @@ export const SlideShow = ({ images, title, className }: Props) => {
                                 src={`/products/${image}`}
                                 alt={title}
                                 height={400}
-                                width={900}
-                                className="rounded-lg object-fill"
+                                width={400}
+                                className="rounded-lg"
                             />
                         </SwiperSlide>
                     )
@@ -83,3 +89,4 @@ export const SlideShow = ({ images, title, className }: Props) => {
         </>
     );
 }
+)
